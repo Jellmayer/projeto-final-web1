@@ -76,46 +76,57 @@
         </div>
       </div>
 
-      <button class="btn btn-primary" id="mostrarAplicacoes" type="button">
-        Mostrar aplicações práticas
-      </button>
+      <div class="d-flex justify-content-between align-items-center">
+        <button class="btn btn-primary" id="mostrarAplicacoes" type="button">
+          Mostrar aplicações práticas
+        </button>
+        <h6 class="mb-0 d-none" id="arrastarTela">-----Arraste a Tela-----</h6>
+      </div>
 
-      <section class="row g-3 mt-3 d-none" id="aplicacoes">
-        <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="h5">Desfazer em editores</h2>
-              <p class="mb-0">
-                O recurso Ctrl+Z usa pilhas para remover a ação mais recente e
-                restaurar o estado anterior.
-              </p>
-            </div>
+      <section
+        class="d-flex flex-wrap justify-content-center gap-5 mt-4 d-none"
+        id="aplicacoes"
+      >
+        <div class="card" style="width: 18rem">
+          <img src="../assets/images/undo.webp" class="card-img-" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Desfazer em editores</h5>
+            <p class="card-text">
+              O recurso Ctrl+Z usa pilhas para remover a ação mais recente e
+              restaurar o estado anterior.
+            </p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="h5">Fila de impressão</h2>
-              <p class="mb-0">
-                Documentos enviados para uma impressora compartilhada são
-                processados na ordem de chegada.
-              </p>
-            </div>
+        <div class="card" style="width: 18rem">
+          <img
+            src="../assets/images/printer.jpeg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Fila de impressão</h5>
+            <p class="card-text">
+              Documentos enviados para uma impressora compartilhada são
+              processados na ordem de chegada.
+            </p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="h5">Playlists de música</h2>
-              <p class="mb-0">
-                Listas encadeadas circulares permitem repetir músicas sem
-                recriar toda a sequência.
-              </p>
-            </div>
+        <div class="card" style="width: 18rem">
+          <img
+            src="../assets/images/music-player.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Playlists de música</h5>
+            <p class="card-text">
+              Listas encadeadas circulares permitem repetir músicas sem recriar
+              toda a sequência.
+            </p>
           </div>
         </div>
       </section>
     </main>
-    <script src="../assets/js/conteudo.js" />
+    <script src="../assets/js/conteudo.js"></script>
   </body>
 </html>
