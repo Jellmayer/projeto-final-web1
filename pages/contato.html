@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,5 +29,58 @@
         <a class="nav-link active" href="contato.html">Contato</a>
       </li>
     </ul>
+
+    <main class="container py-5">
+      <h1>Contato</h1>
+      <p class="lead">
+        Envie uma mensagem sobre o curso de Análise e Desenvolvimento de
+        Sistemas ou sobre a disciplina Estrutura de Dados.
+      </p>
+
+      <form id="formContato" novalidate>
+        <div class="mb-3">
+          <label class="form-label" for="nome">Nome</label>
+          <input class="form-control" id="nome" name="nome" type="text" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="mensagem">Mensagem</label>
+          <textarea
+            class="form-control"
+            id="mensagem"
+            name="mensagem"
+            rows="5"
+          ></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Enviar</button>
+      </form>
+
+      <div class="alert mt-3 d-none" id="retorno" role="alert"></div>
+    </main>
+
+    <script>
+      const formulario = document.getElementById("formContato");
+      const retorno = document.getElementById("retorno");
+
+      formulario.addEventListener("submit", (evento) => {
+        evento.preventDefault();
+
+        const nome = document.getElementById("nome").value.trim();
+        const mensagem = document.getElementById("mensagem").value.trim();
+
+        retorno.classList.remove("d-none", "alert-success", "alert-danger");
+
+        if (nome === "" || mensagem === "") {
+          retorno.classList.add("alert-danger");
+          retorno.textContent = "Preencha o nome e a mensagem antes de enviar.";
+          return;
+        }
+
+        retorno.classList.add("alert-success");
+        retorno.textContent = "Mensagem enviada com sucesso!";
+        formulario.reset();
+      });
+    </script>
   </body>
 </html>
