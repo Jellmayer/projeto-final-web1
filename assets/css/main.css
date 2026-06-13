@@ -1,0 +1,27 @@
+html,
+body {
+  background-color: #f4effa;
+}
+.nav {
+  margin: 15px 15px 0px;
+}
+
+a:link {
+  color: #532b88;
+  text-decoration: none;
+}
+a:visited {
+  color: #532b88;
+}
+.nav-link:hover {
+  color: #2f184b;
+  text-decoration: underline;
+}
+.nav-tabs .nav-link.active {
+  color: #9b72cf;
+  background-color: #f4effa;
+  border-color: #9b72cf #9b72cf #f4effa;
+}
+a:active {
+  color: #532b88;
+}
