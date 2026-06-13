@@ -6,6 +6,21 @@ body {
   margin: 15px 15px 0px;
 }
 
+.btn-primary {
+  --bs-btn-bg: #532b88;
+  --bs-btn-border-color: #3a1d63;
+  --bs-btn-color: #fff;
+
+  --bs-btn-hover-bg: #3a1d63;
+  --bs-btn-hover-border-color: #2a1548;
+  --bs-btn-hover-color: #fff;
+
+  --bs-btn-active-bg: #24123d;
+  --bs-btn-active-border-color: #1b0d2e;
+  --bs-btn-active-color: #fff;
+
+  --bs-btn-focus-shadow-rgb: 83, 43, 136;
+}
 a:link {
   color: #532b88;
   text-decoration: none;
@@ -24,4 +39,38 @@ a:visited {
 }
 a:active {
   color: #532b88;
+}
+
+.carousel {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.carousel-caption {
+  z-index: 2;
+}
+
+.card {
+  cursor: default;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
