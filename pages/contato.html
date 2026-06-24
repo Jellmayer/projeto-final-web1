@@ -41,6 +41,7 @@
         <div class="mb-3">
           <label class="form-label" for="nome">Nome</label>
           <input class="form-control" id="nome" name="nome" type="text" />
+          <div class="invalid-feedback">O campo nome não pode ficar vazio.</div>
         </div>
 
         <div class="mb-3">
@@ -51,9 +52,15 @@
             name="mensagem"
             rows="5"
           ></textarea>
+          <div class="invalid-feedback">
+            O campo mensagem não pode ficar vazio.
+          </div>
         </div>
 
         <button class="btn btn-primary" type="submit">Enviar</button>
+        <button class="btn btn-secondary" id="limparCampos" type="button">
+          Limpar campos
+        </button>
       </form>
 
       <div class="alert mt-3 d-none" id="retorno" role="alert"></div>
@@ -62,24 +69,42 @@
     <script>
       const formulario = document.getElementById("formContato");
       const retorno = document.getElementById("retorno");
+      const nome = document.getElementById("nome");
+      const mensagem = document.getElementById("mensagem");
+      const limparCampos = document.getElementById("limparCampos");
+
+      function limparValidacao() {
+        nome.classList.remove("is-invalid");
+        mensagem.classList.remove("is-invalid");
+        retorno.classList.add("d-none");
+        retorno.classList.remove("alert-success", "alert-danger");
+        retorno.textContent = "";
+      }
 
       formulario.addEventListener("submit", (evento) => {
         evento.preventDefault();
 
-        const nome = document.getElementById("nome").value.trim();
-        const mensagem = document.getElementById("mensagem").value.trim();
+        const nomeVazio = nome.value.trim() === "";
+        const mensagemVazia = mensagem.value.trim() === "";
 
         retorno.classList.remove("d-none", "alert-success", "alert-danger");
+        nome.classList.toggle("is-invalid", nomeVazio);
+        mensagem.classList.toggle("is-invalid", mensagemVazia);
 
-        if (nome === "" || mensagem === "") {
+        if (nomeVazio || mensagemVazia) {
           retorno.classList.add("alert-danger");
-          retorno.textContent = "Preencha o nome e a mensagem antes de enviar.";
+          retorno.textContent = "Preencha os campos obrigatórios antes de enviar.";
           return;
         }
 
         retorno.classList.add("alert-success");
         retorno.textContent = "Mensagem enviada com sucesso!";
         formulario.reset();
+      });
+
+      limparCampos.addEventListener("click", () => {
+        formulario.reset();
+        limparValidacao();
       });
     </script>
   </body>
