@@ -42,12 +42,12 @@ a:active {
 }
 
 .carousel {
-  width: 600px;
+  width: min(100%, 600px);
   margin: 0 auto;
 }
 
 .carousel-item img {
-  height: 400px;
+  height: clamp(220px, 55vw, 400px);
   object-fit: cover;
 }
 
@@ -73,4 +73,19 @@ a:active {
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 576px) {
+  .nav {
+    margin: 10px 10px 0;
+  }
+
+  main.container {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .carousel-item img {
+    height: 220px;
+  }
 }
